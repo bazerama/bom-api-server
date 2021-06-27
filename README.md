@@ -31,28 +31,6 @@ Boilerplate/Generator/Starter Project for building RESTful APIs and microservice
  - [Node v7.6+](https://nodejs.org/en/download/current/) or [Docker](https://www.docker.com/)
  - [Yarn](https://yarnpkg.com/en/docs/install)
 
-## Getting Started
-
-#### Clone the repo and make it yours:
-
-```bash
-git clone --depth 1 https://github.com/danielfsousa/express-rest-es2017-boilerplate
-cd express-rest-es2017-boilerplate
-rm -rf .git
-```
-
-#### Install dependencies:
-
-```bash
-yarn
-```
-
-#### Set environment variables:
-
-```bash
-cp .env.example .env
-```
-
 ## Running Locally
 
 ```bash
@@ -116,19 +94,6 @@ pm2 logs
 ```bash
 # generate and open api documentation
 yarn docs
-```
-
-## Docker
-
-```bash
-# run container locally
-yarn docker:dev
-
-# run container in production
-yarn docker:prod
-
-# run tests
-yarn docker:test
 ```
 
 ## Deploy
