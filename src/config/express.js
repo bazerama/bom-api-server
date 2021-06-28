@@ -5,7 +5,6 @@ const compress = require('compression');
 const methodOverride = require('method-override');
 const cors = require('cors');
 const helmet = require('helmet');
-const passport = require('passport');
 const routes = require('../api/routes/v1');
 const { logs } = require('./vars');
 const error = require('../api/middlewares/error');
@@ -15,6 +14,12 @@ const error = require('../api/middlewares/error');
 * @public
 */
 const app = express();
+
+// enable CORS - Cross Origin Resource Sharing
+const options = {
+    origin: 'http://localhost:4001',
+};
+app.use(cors(options));
 
 // request logging. dev: console | production: file
 app.use(morgan(logs));
@@ -32,12 +37,6 @@ app.use(methodOverride());
 
 // secure apps by setting various HTTP headers
 app.use(helmet());
-
-// enable CORS - Cross Origin Resource Sharing
-app.use(cors());
-
-// enable authentication
-app.use(passport.initialize());
 
 // mount api v1 routes
 app.use('/v1', routes);

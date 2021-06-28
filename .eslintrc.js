@@ -8,6 +8,7 @@ module.exports = {
         ecmaVersion: 8
     },
     rules: {
+        'newline-per-chained-call': 0,
         'no-console': 0,
         'no-underscore-dangle': 0,
         'no-unused-vars': ['error', { 'argsIgnorePattern': 'next' }],

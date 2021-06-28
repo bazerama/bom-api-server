@@ -19,6 +19,11 @@ const handler = (err, req, res, next) => {
         delete response.stack;
     }
 
+    res.header('Access-Control-Allow-Origin', 'http://localhost:4001');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+
     res.status(err.status);
     res.json(response);
 };
