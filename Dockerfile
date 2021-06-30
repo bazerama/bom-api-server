@@ -20,4 +20,4 @@ COPY . ./
 EXPOSE 4000
 
 # start app
-CMD ["yarn", "start"]
+CMD ["pm2-runtime", "./src/index.js"]
